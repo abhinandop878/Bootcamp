@@ -41,7 +41,15 @@ public class Calculator {
                     System.out.println("Enter 2 number for Division:");
                     a=input.nextInt();
                     b=input.nextInt();
-                    s=a/b;
+                    try {
+                        s = a / b;
+                    }
+                    catch (ArithmeticException e){
+                        System.out.println("2nd number is Zero! can not divide, program returns "+e);
+                        System.out.println("Enter 2nd number:");
+                        b=input.nextInt();
+                        s=a/b;
+                    }
                     System.out.println("Division:"+s);
                     break;
                 case 5:
