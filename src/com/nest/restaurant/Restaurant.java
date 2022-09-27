@@ -1,5 +1,6 @@
 package com.nest.restaurant;
 
+import java.nio.charset.CharacterCodingException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -20,8 +21,16 @@ public class Restaurant {
             System.out.println("4. Cold-Coffee (Frappe) 70/-");
             System.out.println("5. Ice Tea (Lemon)      51/-");
             System.out.println("6. \t\tPRINT BILL");
+            System.out.println("7. Exit");
             System.out.println("Enter your choice:");
-            choice=input.nextInt();
+            try {
+                choice = input.nextInt();
+            }
+            catch (Exception e){
+                System.out.println("Invalid input!");
+                System.out.println("Enter your choice again:");
+                choice=input.nextInt();
+            }
             switch (choice){
                 case 1:
                     System.out.println("Number of Tea");
@@ -76,7 +85,12 @@ public class Restaurant {
                     }
                     System.out.println("\t\t\t\t\tTOTAL= "+total+"/-");
                     System.out.println("\t\t\t\t\t===========");
+                    break;
+                case 7:
                     System.exit(0);
+                    break;
+                default:
+                    System.out.println("Invaild input!");
             }
 
         }
