@@ -4,6 +4,7 @@ import com.nest.gettersAndSetters.Food;
 
 import java.nio.charset.CharacterCodingException;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Restaurant {
@@ -202,6 +203,9 @@ public class Restaurant {
                     break;
                 case 3:
                     System.exit(0);
+                    break;
+                default:
+                    System.out.println("Invalid Input!");
             }
         }
     }
