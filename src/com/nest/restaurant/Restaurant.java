@@ -97,6 +97,11 @@ public class Restaurant {
                                 }
                                 System.out.println("\t\t\t\t\tTOTAL= " + total + "/-");
                                 System.out.println("\t\t\t\t\t===========");
+                                total=0;
+                                purchase.clear();
+                                numberOf.clear();
+                                sum.clear();
+                                price.clear();
                                 break;
                             case 7:
                                 System.exit(0);
@@ -178,6 +183,11 @@ public class Restaurant {
                                 }
                                 System.out.println("\t\t\t\t\tTOTAL= " + total + "/-");
                                 System.out.println("\t\t\t\t\t===========");
+                                total=0;
+                                purchase.clear();
+                                numberOf.clear();
+                                sum.clear();
+                                price.clear();
                                 break;
                             case 7:
                                 System.exit(0);
