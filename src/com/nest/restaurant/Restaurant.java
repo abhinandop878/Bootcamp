@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Restaurant {
     public static void main(String[] args) {
-        int total=0,choice,n,i,f=0;
+        int total=0,choice,n,i,f=1;
         Scanner input=new Scanner(System.in);
         ArrayList<String> purchase=new ArrayList<String>();
         ArrayList<Integer> numberOf=new ArrayList<Integer>();
@@ -17,6 +17,7 @@ public class Restaurant {
         Food fooditems=new Food(40,51,55,70,51);
         Food takeawayFooditems=new Food(42,53,57,72,53);
         while (true){
+            f=1;
             System.out.println("\t\t\tSelect an Option");
             System.out.println("1. Dinner In");
             System.out.println("2. Takeaway");
@@ -25,7 +26,8 @@ public class Restaurant {
             choice=input.nextInt();
             switch (choice) {
                 case 1:
-                    while (true) {
+                    while (f>0)
+                    {
                         System.out.println("\t\t\t***MENU***");
                         System.out.println("\t\t\t   ====");
                         System.out.println("1. Tea                  " + fooditems.getTea());
@@ -104,14 +106,15 @@ public class Restaurant {
                                 price.clear();
                                 break;
                             case 7:
-                                System.exit(0);
+                                f=0;
                                 break;
                             default:
                                 System.out.println("Invaild input!");
                         }
                     }
+                    break;
                 case 2:
-                    while (true) {
+                    while (f>0) {
                         System.out.println("\t\t\t***MENU***");
                         System.out.println("\t\t\t   ====");
                         System.out.println("1. Tea                  " + takeawayFooditems.getTea());
@@ -190,12 +193,13 @@ public class Restaurant {
                                 price.clear();
                                 break;
                             case 7:
-                                System.exit(0);
+                                f=0;
                                 break;
                             default:
                                 System.out.println("Invaild input!");
                         }
                     }
+                    break;
                 case 3:
                     System.exit(0);
             }
